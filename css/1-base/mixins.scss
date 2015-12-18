@@ -1,0 +1,41 @@
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$small-phone: 320px;
+@mixin small-phone {
+	@media (max-width: #{$small-phone}) {
+   	@content;
+  	}
+}
+
+@mixin medium-phone {
+	@media (max-width: #{$tablet-width}) {
+   	@content;
+  	}
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    	@content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    	@content;
+  }
+}

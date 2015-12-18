@@ -1,7 +1,30 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<head>
+	<meta charset="utf-8">
+	
+	<title>Shareform</title>
+	<link rel="stylesheet" href="lib/css/animate.css">
+	<link rel="stylesheet" href="lib/css/materialize.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="lib/font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="icon" href="img/logo.png">
+	
+</head>
+<body ng-app="App">
+	
+	
+	<div id="TempNav" ng-include="'templates/nav-bar.html'"></div>
+	
+	<div id="TempHero" ng-include="'templates/hero.html'"></div>
+	
+	<div style="height: 2000px; background: lightblue"></div>
+	
+	<script type="text/javascript" src="lib/js/angular.min.js"></script>
+	<script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="lib/js/materialize.min.js"></script>
+	<script type="text/javascript" src="lib/js/parallax.js"></script>
+	<script type="text/javascript" src="lib/js/underscore.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
