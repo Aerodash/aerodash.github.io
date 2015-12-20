@@ -14,24 +14,72 @@ $(window).scroll(function(){
 		'transform': 'translateY(-' + (wScroll / 20) + '%)' 
 	});
 	
+	if ($(window).width() >= 1024){
+		if (wScroll >= $('#TempHero').height() - $('div.nav-wrapper').height()){
+
+			if ($('.logo-wrapper').position().left == 165){
+				$('.logo-wrapper').animate({
+					'left': '20px'
+				}, 10, "linear");
+			}
+			
+			if ($('.nav-wrapper').css('margin-right') == '165px'){
+				$('.nav-wrapper').animate({
+					'margin-right': '27px'
+				}, 200, "linear");
+			}
+			
+		}else {
+
+			if ($('.logo-wrapper').position().left == 20){
+				$('.logo-wrapper').animate({
+					'left': '165px'
+				}, 10, "linear");
+				
+			}
+			if ($('.nav-wrapper').css('margin-right') == '27px'){
+				$('.nav-wrapper').animate({
+					'margin-right': '165px'
+				}, 200, "linear");
+			}
+			
+		}
+	}
+	
 	if (wScroll >= $('#TempHero').height() - $('div.nav-wrapper').height()){
+
+		if ($('.title').css('display') == "none"){
+			_.delay(function(){
+				$('.title').css({
+					'display': 'block'
+				});
+			}, 150);
+		}
 		
-		if ($('.logo-wrapper').position().left >= 0){
-			$('.logo-wrapper').animate({
-				'left': '-150px'
-			}, 300);
+		if ($('nav').css('opacity') == '1'){
+			$('nav').css({
+				'opacity': '0.95'
+			});
 		}
 		
 	}else {
-		
-		if ($('.logo-wrapper').position().left <= -150){
-			$('.logo-wrapper').animate({
-				'left': '0px'
-			}, 300);
+
+		if ($('.title').css('display') == "block"){
+			_.delay(function(){
+				$('.title').css({
+					'display': 'none'
+				});
+			}, 150);
 		}
 		
+		if ($('nav').css('opacity') == '0.95'){
+			$('nav').css({
+				'opacity': '1'
+			});
+		}
 	}
 });
+
 
 $(window).resize( _.throttle(onResize, 500));
 
@@ -48,6 +96,12 @@ var wWidth = $(window).width();
 var scenes = $('.scene');
 var onResizeRunning = false;
 function onResize(){
+	//don't animate nav when little screen
+	if($(window).height() < 1024){
+		$('.logo-wrapper').css({
+			'left': '20px'
+		});
+	}
 	if (onResizeRunning || ($(window).width() == wWidth && !firstTime)) return;
 	
 	console.log('onResize()')

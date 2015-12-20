@@ -325,27 +325,49 @@ picture {
 nav {
   z-index: 999;
   position: fixed;
+  height: 64px;
+  transition: all 0.3s ease-in-out;
   background-color: #424242; }
-  nav .nav-wrapper {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto; }
-    nav .nav-wrapper::after {
-      clear: both;
-      content: "";
-      display: table; }
-    nav .nav-wrapper .logo-wrapper {
-      height: 50px;
-      width: 50px;
-      padding: 0px;
-      background-color: #2196F3;
-      margin-top: 7px;
-      margin-left: 7px;
-      border-radius: 50%; }
-    nav .nav-wrapper a {
+  @media screen and (max-width: 320px) {
+    nav {
+      height: 54px !important; } }
+  @media screen and (min-width: 1024px) {
+    nav .nav-wrapper {
+      margin-right: 165px; } }
+  nav .nav-wrapper .title {
+    display: none;
+    position: absolute;
+    font-family: "Roboto";
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 90px; }
+    @media screen and (max-width: 320px) {
+      nav .nav-wrapper .title {
+        display: none !important; } }
+  nav .nav-wrapper .logo-wrapper {
+    left: 20px;
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+    background-color: #2196F3;
+    margin-top: 7px;
+    margin-left: 7px;
+    border-radius: 50%; }
+    @media screen and (min-width: 1024px) {
+      nav .nav-wrapper .logo-wrapper {
+        left: 165px; } }
+    @media screen and (max-width: 320px) {
+      nav .nav-wrapper .logo-wrapper {
+        height: 40px;
+        width: 40px; } }
+  nav .nav-wrapper a {
+    color: white; }
+    nav .nav-wrapper a:hover {
       color: white; }
-      nav .nav-wrapper a:hover {
-        color: white; }
 
 .hero {
   overflow: hidden;
@@ -356,15 +378,22 @@ nav {
   .hero .hero-inner {
     position: relative;
     margin-top: 50px; }
-    .hero .hero-inner .scene .layer {
-      width: 800px;
-      height: 600px; }
+    .hero .hero-inner .scene {
+      position: absolute;
+      top: -80;
+      left: -40px;
+      z-index: 1; }
+      .hero .hero-inner .scene .layer {
+        width: 800px;
+        height: 600px; }
     .hero .hero-inner .hero-text {
       -webkit-box-shadow: 0px 0px 33px 21px rgba(50, 71, 102, 0.9);
       -moz-box-shadow: 0px 0px 33px 21px rgba(50, 71, 102, 0.9);
       box-shadow: 0px 0px 33px 21px rgba(50, 71, 102, 0.9);
       background-color: rgba(50, 71, 102, 0.9);
       margin-top: 70px;
+      z-index: 2;
+      position: inherit;
       float: left;
       display: block;
       margin-right: 2.35765%;
@@ -372,21 +401,23 @@ nav {
       margin-left: 25.58941%; }
       .hero .hero-inner .hero-text:last-child {
         margin-right: 0; }
-      @media (max-width: 320px) {
+      @media screen and (max-width: 320px) {
         .hero .hero-inner .hero-text {
           margin-left: 55px; } }
       .hero .hero-inner .hero-text h1 {
+        color: white;
+        border-bottom: 1px solid white;
         font-family: "Roboto";
         margin-bottom: 10px;
         text-align: center;
         font-size: 6vw;
         font-weight: 200; }
-        @media (max-width: 320px) {
+        @media screen and (max-width: 320px) {
           .hero .hero-inner .hero-text h1 {
             font-size: 40px;
             width: 190px;
             left: 150px; } }
-        @media (max-width: 768px) {
+        @media screen and (min-width: 320px) and (max-width: 575px) {
           .hero .hero-inner .hero-text h1 {
             font-size: 40px; } }
       .hero .hero-inner .hero-text .hero-bottom p {
@@ -394,10 +425,23 @@ nav {
         font-size: 20px;
         font-weight: 200;
         text-align: center; }
-        @media (max-width: 320px) {
+        @media screen and (max-width: 320px) {
           .hero .hero-inner .hero-text .hero-bottom p {
             font-size: 14px;
             margin-left: 20px;
             width: 150px; } }
+
+@media screen and (max-width: 320px) {
+  body #filler {
+    background: red !important; } }
+@media screen and (min-width: 320px) and (max-width: 575px) {
+  body #filler {
+    background: orange !important; } }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body #filler {
+    background: yellow !important; } }
+@media screen and (min-width: 1024px) {
+  body #filler {
+    background: white !important; } }
 
 /*# sourceMappingURL=app.css.map */
