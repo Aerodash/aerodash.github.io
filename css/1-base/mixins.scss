@@ -1,0 +1,64 @@
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$small-phone: 320px;
+$w576: 576px;
+$w450: 450px;
+
+//width <= 320
+@mixin small-phone {
+	@media screen and (max-width: #{$small-phone}) {
+   	@content;
+  	}
+}
+
+//width >= 321 && width <= 575
+@mixin medium-phone {
+	@media screen and (min-width: #{$small-phone}) and (max-width: #{$w576 - 1px}) {
+   	@content;
+  	}
+}
+
+
+//width >= 576 && width <= 767
+@mixin w576 {
+	@media screen and (min-width: #{$w576}) and (max-width: #{$tablet-width - 1px}){
+    	@content;
+  }
+}
+
+//width >= 768 && width <= 1023
+@mixin tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    	@content;
+  }
+}
+
+//width >= 1024
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width}) {
+    	@content;
+  }
+}
+
+//width <= 450
+@mixin w450 {
+	@media screen and (max-width: #{$w450}) {
+   	@content;
+  	}
+}
+

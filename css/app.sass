@@ -1,0 +1,15 @@
+@import '0-plugins/plugins-dir'
+@import '1-base/base-dir'
+@import '2-modules/modules-dir'
+@import '3-layouts/layouts-dir'
+
+body
+	#filler
+		+small-phone // < 320
+			background: red !important
+		+medium-phone // < 576
+			background: orange !important
+		+tablet // > 768
+			background: yellow !important
+		+desktop // < 1024
+			background: white !important
