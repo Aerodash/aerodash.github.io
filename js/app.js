@@ -120,10 +120,9 @@ function onResize(){
 		})
 
 		while (allScenesWidth < $(window).width()) {
+			if ($('.scene').last().position() == undefined) continue;
 			clone = $('.scene').clone();
-			console.log("$('.scene') = ", $('.scene'));
-			console.log("$('.scene').last() = ", $('.scene').last());
-			console.log("$('.scene').last().position() = ", $('.scene').last().position())
+
 			clone.css({
 				left: $('.scene').last().position().left + 770
 			});
