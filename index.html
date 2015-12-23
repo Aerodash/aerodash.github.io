@@ -11,14 +11,14 @@
 	<link rel="icon" href="img/logo.png">
 	
 </head>
-<body ng-app="App">
+<body ng-app="App" ng-controller="MainCtrl">
 	
 	
 	<div id="TempNav" ng-include="'templates/nav-bar.html'"></div>
 	
-	<!--<div id="TempHero" ng-include="'templates/hero.html'"></div>-->
+	<div id="TempHero" ng-include="'templates/hero.html'" onload="onResize()"></div>
 
-	<div id="TempHero" class="hero">
+	<!--<div id="TempHero" class="hero">
 		<div class="hero-inner">
 			<div class="hero-text">
 				<h1>Shareform</h1>
@@ -44,7 +44,7 @@
 			  <li class="layer" data-depth="0.35"><img src="img/bgs/bg6.png"></li>
 			</ul>
 		</div>
-	</div>
+	</div>-->
 
 	<div id="scrollTopFab"></div>
 

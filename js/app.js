@@ -1,5 +1,11 @@
 //init angular
-angular.module('App', []);
+angular.module('App', [])
+
+.controller('MainCtrl', ['$scope', function($scope){
+
+	$scope.onResize = onResize;
+
+}]);
 
 //scroll handler (parallax effect)
 $(window).scroll(function(){
@@ -83,10 +89,10 @@ $(window).scroll(function(){
 
 $(window).resize(_.throttle(onResize, 500));
 
-$(window).load(function(){
+/*$(window).load(function(){
 	//_.throttle(onResize, 500);
-	onResize();
-});
+	//onResize();
+});*/
 
 //init parallax.js
 $('.scene').parallax();
