@@ -431,17 +431,15 @@ nav {
             margin-left: 20px;
             width: 150px; } }
 
-@media screen and (max-width: 320px) {
-  body #filler {
-    background: red !important; } }
-@media screen and (min-width: 320px) and (max-width: 575px) {
-  body #filler {
-    background: orange !important; } }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  body #filler {
-    background: yellow !important; } }
-@media screen and (min-width: 1024px) {
-  body #filler {
-    background: white !important; } }
+/*body
+ * #filler
+ * 	+small-phone // < 320
+ * 		background: red !important
+ * 	+medium-phone // < 576
+ * 		background: orange !important
+ * 	+tablet // > 768
+ * 		background: yellow !important
+ * 	+desktop // < 1024
+ * 		background: white !important */
 
 /*# sourceMappingURL=app.css.map */
