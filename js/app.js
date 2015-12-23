@@ -120,7 +120,7 @@ function onResize(){
 		})
 		console.log("All scenes width : " + allScenesWidth);
 
-		while (allScenesWidth < $(window).width()) {
+		/*while (allScenesWidth < $(window).width()) {
 
 			clone = $('.scene').clone();
 
@@ -131,7 +131,7 @@ function onResize(){
 			clone.addClass('fadeIn');
 			$('.hero-inner').append(clone);
 			allScenesWidth += 800;
-		}
+		}*/
 		
 		removeDuplicates();
 		
