@@ -81,9 +81,10 @@ $(window).scroll(function(){
 });
 
 
-$(window).resize( _.throttle(onResize, 500));
+$(window).resize(_.throttle(onResize, 500));
 
 $(window).load(function(){
+	//_.throttle(onResize, 500);
 	onResize();
 });
 
@@ -96,6 +97,7 @@ var wWidth = $(window).width();
 var scenes = $('.scene');
 var onResizeRunning = false;
 function onResize(){
+	console.log('onResize() before controls')
 	//don't animate nav when little screen
 	if($(window).height() < 1024){
 		$('.logo-wrapper').css({
