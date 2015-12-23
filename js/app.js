@@ -118,9 +118,10 @@ function onResize(){
 		$('.scene').each(function(){
 			allScenesWidth += $(this).width();
 		})
+		console.log("All scenes width : " + allScenesWidth);
 
 		while (allScenesWidth < $(window).width()) {
-			if ($('.scene').last().position() == undefined) continue;
+
 			clone = $('.scene').clone();
 
 			clone.css({
