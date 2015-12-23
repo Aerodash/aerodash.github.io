@@ -83,9 +83,9 @@ $(window).scroll(function(){
 
 $(window).resize( _.throttle(onResize, 500));
 
-$(window).load(function(){
+/*$(window).load(function(){
 	onResize();
-});
+});*/
 
 //init parallax.js
 $('.scene').parallax();
