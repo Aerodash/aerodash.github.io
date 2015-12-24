@@ -5,6 +5,12 @@ angular.module('App', [])
 
 	$scope.onResize = onResize;
 
+	$scope.scrollTop = function(){
+
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+
+	};
+
 }]);
 
 //scroll handler (parallax effect)
@@ -68,6 +74,12 @@ $(window).scroll(function(){
 			});
 		}
 		
+		if ($('#scrollTopFab').css('opacity') == '0'){
+			$('#scrollTopFab').css({
+				'opacity': '1'
+			});
+		}
+
 	}else {
 
 		if ($('.title').css('display') == "block"){
@@ -81,6 +93,12 @@ $(window).scroll(function(){
 		if ($('nav').css('opacity') == '0.95'){
 			$('nav').css({
 				'opacity': '1'
+			});
+		}
+
+		if ($('#scrollTopFab').css('opacity') == '1'){
+			$('#scrollTopFab').css({
+				'opacity': '0'
 			});
 		}
 	}
